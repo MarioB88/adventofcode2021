@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 
-fichero = 'C:\\OwnProjects\\advent_code2021\\day1\\data\\data-day1.txt'
+fichero = 'adventofcode2021\\day1\\data\\data-day1.txt'
 data = np.loadtxt(fichero, delimiter=' ', dtype = int)
 
 contador = 0
@@ -25,7 +25,6 @@ for _, row in pd_grouped.iterrows():
         contador += 1
     prev_sum = row['sum']
 
-print(pd_grouped.head(10))
 print(contador)
 
 
