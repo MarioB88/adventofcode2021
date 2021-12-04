@@ -1,3 +1,4 @@
+from typing import Tuple
 from board import Board
 
 ## Iniciamos el fichero y leemos la primera linea
@@ -49,5 +50,38 @@ for n in rnumbers:
 score = int(n)*b.score()
 print(score)
 
+##### PART 2 #####
+
+## Realizamos lo mismo que en la parte 1, pero quitando de la lista aquellos tableros que terminan hasta que solo quede uno. En el codigo esta puesto para que solo
+## queden dos porque el ultimo es un tablero vacio.
+
+finish = False
+for n in rnumbers:
+    i=0
+    while i < len(board_list):
+        b = board_list[i]
+        b.check_coincidence(n)
+        if b.winner_horizontal():
+            if len(board_list)<3:
+                finish = True
+                break
+            board_list.remove(b)
+            i-=1
+            continue
+        elif b.winner_vertical():
+            if len(board_list)<3:
+                finish = True
+                break
+            len(board_list)
+            board_list.remove(b)
+            i-=1
+            continue
+        i+=1
+    if finish:
+        break
+        
+score = int(n)*b.score()
+print(score)
+            
 
 
