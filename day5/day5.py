@@ -21,11 +21,19 @@ points = {}
 
 for _, row in df.iterrows():
     if row['x1'] == row['x2']:
-        for i in range(row['y1'], row['y2'] + 1):
-            points[(row['x1'], i)] = points.get((row['x1'], i), 0) + 1
+        if row['y1'] < row['y2']:
+            for i in range(row['y1'], row['y2'] + 1):
+                points[(row['x1'], i)] = points.get((row['x1'], i), 0) + 1
+        else:
+            for i in range(row['y2'], row['y1'] + 1):
+                points[(row['x1'], i)] = points.get((row['x1'], i), 0) + 1
     elif row['y1'] == row['y2']:
-        for i in range(row['x1'], row['x2'] + 1):
-            points[(i, row['y1'])] = points.get((i, row['y1']), 0) + 1
+        if row['x1'] < row['x2']:
+            for i in range(row['x1'], row['x2'] + 1):
+                points[(i, row['y1'])] = points.get((i, row['y1']), 0) + 1
+        else:
+            for i in range(row['x2'], row['x1'] + 1):
+                points[(i, row['y1'])] = points.get((i, row['y1']), 0) + 1
 
 contador = 0
 for value in list(points.values()):
