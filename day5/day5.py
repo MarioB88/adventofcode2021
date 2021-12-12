@@ -20,6 +20,7 @@ df = pd.DataFrame(data, index= None, columns=['x1', 'y1', 'x2', 'y2'])
 points = {}
 
 for _, row in df.iterrows():
+
     if row['x1'] == row['x2']:
         if row['y1'] < row['y2']:
             for i in range(row['y1'], row['y2'] + 1):
@@ -34,6 +35,30 @@ for _, row in df.iterrows():
         else:
             for i in range(row['x2'], row['x1'] + 1):
                 points[(i, row['y1'])] = points.get((i, row['y1']), 0) + 1
+    else:
+        x_inicio = row['x1']
+        x_final = row['x2']
+        y_inicio = row['y1']
+        y_final = row['y2']
+        if x_inicio < x_final:
+            j = 1
+        else:
+            j = -1
+        if y_inicio < y_final:
+            k = 1
+        else:
+            k = -1
+
+        if j > 0:
+            while x_inicio <= x_final:
+                points[(x_inicio, y_inicio)] = points.get((x_inicio, y_inicio),0) +1
+                x_inicio += j
+                y_inicio += k
+        else:
+            while x_inicio >= x_final:
+                points[(x_inicio, y_inicio)] = points.get((x_inicio, y_inicio),0) +1
+                x_inicio += j
+                y_inicio += k
 
 contador = 0
 for value in list(points.values()):
@@ -41,4 +66,8 @@ for value in list(points.values()):
         contador += 1
 
 print(contador)
+
+## PARTE 2 es la ultima condicion del primer if dentro del anterior bucle for ##
+
+
 
