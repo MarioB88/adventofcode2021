@@ -3,7 +3,7 @@ from board import Board
 
 ## Iniciamos el fichero y leemos la primera linea
 
-fname = 'adventofcode2021\\day4\\data\\data-day4.txt'
+fname = 'day4\\data\\data-day4.txt'
 fichero = open(fname)
 firstline = fichero.readline()
 

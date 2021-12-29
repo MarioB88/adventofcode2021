@@ -1,6 +1,6 @@
 // PART 1
 
-fname = "C:\\OwnProjects\\adventofcode2021\\adventofcode2021\\day3\\data\\data-day3.txt"
+fname = "day3\\data\\data-day3.txt"
 File f = new File(fname)
 
 List cont1s = []
@@ -32,7 +32,7 @@ i = 0
 List gamma = []
 List epsilon = []
 
-while(i < cont0s.size){
+while(i < cont0s.size){  
     gamma << (cont0s.get(i)<=cont1s.get(i))
     i++
 }

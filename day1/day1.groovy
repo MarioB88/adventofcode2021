@@ -1,4 +1,4 @@
-def fname = "C:\\OwnProjects\\adventofcode2021\\adventofcode2021\\day1\\data\\data-day1.txt"
+def fname = "day1\\data\\data-day1.txt"
 File f = new File(fname)
 List numbers = f.text.split("\n")
 def prevn = numbers[0]

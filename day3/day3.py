@@ -5,7 +5,7 @@ import pandas as pd
 
 gamma_rate = ''
 epsilon_rate = ''
-fichero = 'adventofcode2021\\day3\\data\\data-day3.txt'
+fichero = 'day3\\data\\data-day3.txt'
 data = np.genfromtxt(fichero, delimiter=1, dtype=int)           ## Cargamos los datos
 df = pd.DataFrame(data, index=None, columns=None)               ## Generamos el dataframe a partir de los datos
 

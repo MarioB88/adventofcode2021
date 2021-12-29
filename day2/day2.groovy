@@ -1,6 +1,6 @@
 // PART 1
 
-fname = "C:\\OwnProjects\\adventofcode2021\\adventofcode2021\\day2\\data\\data-day2.txt"
+fname = "day2\\data\\data-day2.txt"
 File f = new File(fname)
 int hor = 0
 int depth = 0

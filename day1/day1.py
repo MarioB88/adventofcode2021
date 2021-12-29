@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 
-fichero = 'adventofcode2021\\day1\\data\\data-day1.txt'
+fichero = 'day1\\data\\data-day1.txt'
 data = np.loadtxt(fichero, delimiter=' ', dtype = int)
 
 contador = 0
