@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 
 
-fichero = 'adventofcode2021\\day2\\data\\data-day2.txt'
+fichero = 'day2\\data\\data-day2.txt'
 
 data = np.loadtxt(fichero, delimiter=' ', dtype=str)                            ## Cargamos los datos del fichero
 df = pd.DataFrame(data=data, index=None, columns=['Move', 'Distance'])          ## Generamos el dataframe a partir de los datos
